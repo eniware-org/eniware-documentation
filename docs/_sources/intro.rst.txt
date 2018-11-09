@@ -25,7 +25,7 @@ The source format of the documentation is based on the **reStructuredText** (reS
 
 The created source files (**rst-files**) can be processed by the Python documentation system **Sphinx** to generate static web pages and/or pdf-files. Using Sphinx to create documentation is discussed in detail here :ref:`here <extended>`.
 
-The root directory of a Sphinx collection of reStructuredText document sources is called the **source directory**. This directory also contains the Sphinx configuration file **conf.py**, where you can configure all aspects of how Sphinx / Read The Docs reads your sources and builds your documentation (for more information see :ref:`here <conf-py>`.
+The root directory of a Sphinx collection of reStructuredText document sources is called the **source directory**. This directory also contains the Sphinx configuration file **conf.py**, where you can configure all aspects of how Sphinx / Read The Docs reads your sources and builds your documentation (for more information see :ref:`here <conf-py>`).
 
 It is recommended to use either **Eclipse** or **Atom** as an integrated development environment (IDE) for creating rst-files. However, any standard text editor can be used as well (such as **Notepad ++**, **Pluma**, etc.). The process of developing documentation using Eclipse is described in :ref:`Basic Scenario chapter <basic>`, and by using Atom - in :ref:`Alternative Scenario chapter <alternative>`.
 
