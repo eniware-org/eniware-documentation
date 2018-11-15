@@ -1,7 +1,7 @@
 .. _alternative:
 
-Alternative Scenario
-====================
+5. Alternative Scenario
+=======================
 
 **Creating and Building Documentation using Sphinx / Atom - GitHub - GitHub Pages / Read The Docs:**
 

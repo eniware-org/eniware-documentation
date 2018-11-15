@@ -1,7 +1,7 @@
 .. _extended:
 
-Extended Scenario
-==================
+4. Extended Scenario
+====================
 
 **Creating, Building and Deploying Documentation using Sphinx / Eclipse - GitHub - GitHub Pages / Read The Docs**
 

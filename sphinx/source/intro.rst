@@ -1,17 +1,17 @@
 .. _introduction:
 
-Introduction
-=============
+1. Introduction
+=================
 
 
 .. _brief-proc:
 
 
-Brief description of the documentation process
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+1.1. Brief description of the documentation process
+---------------------------------------------------
 
-Basic steps
-+++++++++++
+1.1.1. Basic steps
+^^^^^^^^^^^^^^^^^^
 
 The process of creating documentation is carried out in the following basic steps:
 
@@ -38,8 +38,8 @@ Another considered option is automated building and deployment of the documentat
 As an example, the process of :ref:`automatically creating and hosting API documentation <api-doc>` will be considered as well.
 
 
-Main scenarios
-++++++++++++++
+1.1.2. Main scenarios
+^^^^^^^^^^^^^^^^^^^^^
 
 This guide describes three main scenarios of documentation development:
 
@@ -49,8 +49,8 @@ This guide describes three main scenarios of documentation development:
 
 
 
-Comparison of the main scenarios
-++++++++++++++++++++++++++++++++
+1.1.3. Comparison of the main scenarios
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. list-table::
     :header-rows: 0
@@ -95,13 +95,13 @@ Comparison of the main scenarios
 
 .. _brief-soft:
 
-Brief description of the used software tools and services
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+1.2. Brief description of the used software tools and services
+--------------------------------------------------------------
 
 .. _rest-s:
 
-reStructuredText (reST)
-+++++++++++++++++++++++
+1.2.1. reStructuredText (reST)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 `reStructuredText <http://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html>`_ is an easy-to-read, what-you-see-is-what-you-get plaintext markup syntax and parser system. It is useful for in-line program documentation (such as Python docstrings), for quickly creating simple web pages, and for standalone documents. **reStructuredText** is designed for extensibility for specific application domains.
 The primary goal of **reStructuredText** is to define and implement a markup syntax for use in Python docstrings and other documentation domains, that is readable and simple, yet powerful enough for non-trivial use. The intended purpose of the markup is the conversion of reStructuredText documents into useful structured data formats.
@@ -111,8 +111,8 @@ The primary goal of **reStructuredText** is to define and implement a markup syn
 
 .. _sphinx-s:
 
-Sphinx
-++++++
+1.2.2. Sphinx
+^^^^^^^^^^^^^
 
 `Sphinx <http://www.sphinx-doc.org>`_ is a tool that makes it easy to create intelligent and beautiful documentation, written by Georg Brandl and licensed under the BSD license.
 It was originally created for the Python documentation, and it has excellent facilities for the documentation of software projects in a range of languages.
@@ -132,8 +132,8 @@ The following features should be highlighted:
 
 .. _eclipse-s:
 
-Eclipse
-++++++++
+1.2.3. Eclipse
+^^^^^^^^^^^^^^^
 
 `Eclipse <http://www.eclipse.org/>`_ is an integrated development environment (IDE) used in computer programming, and is the most widely used Java IDE. It contains a base workspace and an extensible plug-in system for customizing the environment.
 The Eclipse project is composed of three subprojects, Platform, Java development tools (JDT), and Plug-in development environment (PDE). The Eclipse Platform is an open extensible IDE for anything and yet nothing in particular. It allows tool builders to independently develop tools that integrate with other people's tools so seamlessly you can't tell where one tool ends and another starts. The JDT project provides the tool plug-ins that implement a full-featured Java IDE supporting the development of any Java application, providing refactoring support, incremental compilation, smart editing etc. The JDT project allows Eclipse to be a development environment for itself. The PDE project provides the mechanisms that enable the community to build plug-ins for eclipse.
@@ -141,8 +141,8 @@ The Eclipse project is composed of three subprojects, Platform, Java development
 
 .. _atom-s:
 
-Atom
-+++++
+1.2.4. Atom
+^^^^^^^^^^^
 
 `Atom <https://atom.io/>`_ is a free and open-source text and source code editor for macOS, Linux, and Microsoft Windows with support for plug-ins written in Node.js, and embedded Git Control, developed by GitHub. Atom is a desktop application built using web technologies. Most of the extending packages have free software licenses and are community-built and maintained. Atom can also be used as an integrated development environment (IDE).
 Like most other configurable text editors, Atom enables users to install third-party packages and themes to customize the features and looks of the editor. Packages can be installed, managed and published via Atom's package manager *apm*.
@@ -151,16 +151,16 @@ Like most other configurable text editors, Atom enables users to install third-p
 
 .. _github-s:
 
-GitHub
-++++++
+1.2.5. GitHub
+^^^^^^^^^^^^^
 
 `GitHub Inc. <https://github.com/>`_ is a web-based hosting service for version control using Git. It is mostly used for computer code. It offers all of the distributed version control and source code management (SCM) functionality of Git as well as adding its own features. It provides access control and several collaboration features such as bug tracking, feature requests, task management, and wikis for every project
 
 
 .. _git-pages-s:
 
-GitHub Pages
-++++++++++++
+1.2.6. GitHub Pages
+^^^^^^^^^^^^^^^^^^^
 
 `GitHub Pages <https://pages.github.com/>`_ is a web hosting service offered by `GitHub <https://github.com/>`_ for hosting static web pages for GitHub users, user blogs, project documentation, or even whole books.
 It is integrated with the `Jekyll software <https://jekyllrb.com/>`_ for static web site and blog generation. The Jekyll source pages for a web site can be stored on GitHub as a Git repository, and when the repository is updated the GitHub Pages servers will automatically regenerate the site.
@@ -169,8 +169,8 @@ As with the rest of GitHub, it includes both free and paid tiers of service. Web
 
 .. _rtd-s:
 
-Read The Docs
-++++++++++++++
+1.2.7. Read The Docs
+^^^^^^^^^^^^^^^^^^^^
 
 `Read the Docs <https://readthedocs.org/>`_ is a software documentation hosting platform. The source code is freely available, and the service is also free to use. 
 With Read The Docs, users can identify how they want their documentation to be created in either a Python documentation generator **Sphinx** file or a `MkDocs <https://www.mkdocs.org/>`_ Markdown file format. Users enter the GitHub repository name where their project is stored (for example, their open source API project), and Read The Docs will automatically generate and host the documentation at the main `Read the Docs site <https://readthedocs.org/>`_. Having an open source project's documentation shared in the Read The Docs library may also be a way to aid discoverability of the API documentation among the open source community. Additional features are available, including the ability to link Google Analytics to the documentation so that API providers can track engagement, as well as the ability to host the documentation generated a provider's own domain.
@@ -178,8 +178,8 @@ One of the main benefits of using Read The Docs is its leverage of a "continuous
 
 
 
-Comparison between GitHub Pages and Read The Docs services
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+1.2.8. Comparison between GitHub Pages and Read The Docs services
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 
 .. list-table::

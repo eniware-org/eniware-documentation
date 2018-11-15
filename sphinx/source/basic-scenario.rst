@@ -1,7 +1,7 @@
 .. _basic:
 
-Basic Scenario
-==============
+3. Basic Scenario
+=================
 
 **Creating, Building and Deploying Documentation using Eclipse - GitHub - Read The Docs:**
 

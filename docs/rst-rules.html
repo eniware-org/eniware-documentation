@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Basic rules for working with reStructuredText (reST) &mdash; Creating Documentation for EniWARE Platform 1 documentation</title>
+  <title>2. Basic rules for working with reStructuredText (reST) &mdash; Creating Documentation for EniWARE Platform 1 documentation</title>
   
 
   
@@ -29,8 +29,8 @@
   <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Basic Scenario" href="basic-scenario.html" />
-    <link rel="prev" title="Introduction" href="intro.html" /> 
+    <link rel="next" title="3. Basic Scenario" href="basic-scenario.html" />
+    <link rel="prev" title="1. Introduction" href="intro.html" /> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -80,14 +80,35 @@
             
             
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Basic rules for working with reStructuredText (reST)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="basic-scenario.html">Basic Scenario</a></li>
-<li class="toctree-l1"><a class="reference internal" href="extended-scenario.html">Extended Scenario</a></li>
-<li class="toctree-l1"><a class="reference internal" href="alternative-scenario.html">Alternative Scenario</a></li>
-<li class="toctree-l1"><a class="reference internal" href="about-conf.html">More about conf.py - tips &amp; tricks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="about-api.html">More about automated API documentation process</a></li>
-<li class="toctree-l1"><a class="reference internal" href="trouble.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro.html">1. Introduction</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">2. Basic rules for working with reStructuredText (reST)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#short-introduction-to-restructuredtext">2.1. Short Introduction to reStructuredText</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntax-details">2.2. Syntax Details</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#whitespace">2.2.1. Whitespace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#escaping-mechanism">2.2.2. Escaping Mechanism</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#quick-syntax-overview">2.3. Quick Syntax Overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#sections">2.3.1. Sections</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#paragraphs-inline-markups">2.3.2. Paragraphs &amp; Inline markups</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lists">2.3.3. Lists</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#blocks">2.3.4. Blocks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tables">2.3.5. Tables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#images">2.3.6. Images</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hyperlinks-references">2.3.7. Hyperlinks &amp; References</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#footnotes-citations">2.3.8. Footnotes &amp; Citations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#admonitions">2.3.9. Admonitions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#additional-body-elements">2.3.10. Additional body elements</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="basic-scenario.html">3. Basic Scenario</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extended-scenario.html">4. Extended Scenario</a></li>
+<li class="toctree-l1"><a class="reference internal" href="alternative-scenario.html">5. Alternative Scenario</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about-conf.html">6. More about conf.py - tips &amp; tricks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about-api.html">7. More about automated API documentation process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trouble.html">8. Troubleshooting</a></li>
 </ul>
 
             
@@ -133,7 +154,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Basic rules for working with reStructuredText (reST)</li>
+      <li>2. Basic rules for working with reStructuredText (reST)</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -153,7 +174,1286 @@
            <div itemprop="articleBody">
             
   <div class="section" id="basic-rules-for-working-with-restructuredtext-rest">
-<span id="rest-rules"></span><h1>Basic rules for working with reStructuredText (reST)<a class="headerlink" href="#basic-rules-for-working-with-restructuredtext-rest" title="Permalink to this headline">¶</a></h1>
+<span id="rest-rules"></span><h1>2. Basic rules for working with reStructuredText (reST)<a class="headerlink" href="#basic-rules-for-working-with-restructuredtext-rest" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="short-introduction-to-restructuredtext">
+<h2>2.1. Short Introduction to reStructuredText<a class="headerlink" href="#short-introduction-to-restructuredtext" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="http://docutils.sourceforge.net/rst.html">reStructuredText</a> (reST) is plaintext that uses simple and intuitive constructs to indicate the structure of a document. These constructs are equally easy to read in raw and processed forms.</p>
+<p>reStructuredText is applicable to documents of any length, from the very small (such as inline program documentation fragments) to the quite large (this document).</p>
+</div>
+<div class="section" id="syntax-details">
+<h2>2.2. Syntax Details<a class="headerlink" href="#syntax-details" title="Permalink to this headline">¶</a></h2>
+<p>A reStructuredText document is made up of <strong>body elements</strong>
+Below is a diagram of the hierarchy of <strong>element types</strong> in reStructuredText.
+Elements may contain other elements below them with recursive or one-to-many relationships: <em>sections</em> may contain <em>(sub)sections</em>, <em>tables</em> contain further body elements, etc. :</p>
+<img alt="Element types in the document structure" src="_images/ii-element-types.png" />
+<div class="section" id="whitespace">
+<h3>2.2.1. Whitespace<a class="headerlink" href="#whitespace" title="Permalink to this headline">¶</a></h3>
+<p>The presence of <strong>whitespaces</strong> is of great importance in the reST syntax:</p>
+<ul class="simple">
+<li><strong>Blank lines</strong> are used to separate paragraphs and other elements. Blank lines may be omitted when the markup makes element separation unambiguous.</li>
+<li><strong>Indentation</strong> is used to indicate, and is only significant in indicating:<ul>
+<li>multiple body elements within a list item (including nested lists),</li>
+<li>the definition part of a definition list item,</li>
+<li>block quotes, and</li>
+<li>the extent of literal blocks.</li>
+</ul>
+</li>
+</ul>
+<p>Although spaces are recommended for indentation, tabs may also be used. Tabs will be converted to spaces. Tab stops are at every 8th column.</p>
+</div>
+<div class="section" id="escaping-mechanism">
+<h3>2.2.2. Escaping Mechanism<a class="headerlink" href="#escaping-mechanism" title="Permalink to this headline">¶</a></h3>
+<p>The character set available in plain text documents, 7-bit ASCII, is limited. No matter what characters are used for markup, they will already have multiple meanings in written text. Therefore markup characters <em>will</em> sometimes appear in text <strong>without being intended as markup</strong>.</p>
+<p>Any serious markup system requires an escaping mechanism to override the default meaning of the characters used for the markup. In reST it is used <strong>the backslash</strong>, commonly used as an escaping character in other domains.</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last"><strong>A backslash followed by any character escapes the character.</strong> The escaped character represents the character itself, and is prevented from playing a role in any markup interpretation. The backslash is removed from the output. A literal backslash is represented by two backslashes in a row.</p>
+</div>
+<p>There are two contexts in which backslashes have no special meaning: literal blocks and inline literals. In these contexts, a single backslash represents a literal backslash.</p>
+</div>
+</div>
+<div class="section" id="quick-syntax-overview">
+<h2>2.3. Quick Syntax Overview<a class="headerlink" href="#quick-syntax-overview" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="sections">
+<h3>2.3.1. Sections<a class="headerlink" href="#sections" title="Permalink to this headline">¶</a></h3>
+<p>A reStructuredText document may be structured into <strong>sections</strong>. Sections contain body elements and/or <strong>subsections</strong>.</p>
+<p>Sections are identified through their <em>titles</em> (with given <em>title style</em>), which are marked up with <em>underlines</em> below the title text (and, in some cases, <em>overlines</em> above the title). An <em>underline/overline</em> is a line of non-alphanumeric characters that begins in column 1 and extends at least as far as the right edge of the title text.</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">When there an overline is used, <strong>the length and character used must match the underline</strong>. There may be any number of levels of section titles.</p>
+</div>
+<p>Normally, there are no heading levels assigned to certain characters as the structure is determined from the succession of headings. However, this convention is used for documenting which you may follow:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">#####</span></code> - for parts</p>
+<p><code class="docutils literal notranslate"><span class="pre">*****</span></code> - with overline, for chapters</p>
+<p><code class="docutils literal notranslate"><span class="pre">=====</span></code> - for sections</p>
+<p><code class="docutils literal notranslate"><span class="pre">-----</span></code> - for subsections</p>
+<p><code class="docutils literal notranslate"><span class="pre">^^^^^</span></code> - for subsubsections</p>
+<p><code class="docutils literal notranslate"><span class="pre">&quot;&quot;&quot;&quot;&quot;&quot;</span></code> - for paragraphs</p>
+</div></blockquote>
+<p>Of course, it can be used many different marker characters, a deeper nesting level, but keep in mind that most target formats (HTML, LaTeX) have a limited supported nesting depth.</p>
+<p>Below are examples of the syntax of different section <em>title styles</em> and how they will be rendered:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Syntax</strong></td>
+<td><strong>Rendering</strong></td>
+</tr>
+<tr class="row-even"><td><div class="code first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">===============</span>
+ <span class="n">Section</span> <span class="n">Title</span>
+<span class="o">===============</span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last figure">
+<img alt="Section title H1" src="_images/ii-section-titles-1.png" />
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="code first last highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">Section</span> <span class="n">Title</span>
+<span class="o">---------------</span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last figure">
+<img alt="Section title H2" src="_images/ii-section-titles-2.png" />
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="code first last highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">Section</span> <span class="n">Title</span>
+<span class="o">^^^^^^^^^^^^^^^</span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last figure">
+<img alt="Section title H3" src="_images/ii-section-titles-3.png" />
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="code first last highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">Section</span> <span class="n">Title</span>
+<span class="o">+++++++++++++++</span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last figure">
+<img alt="Section title H4" src="_images/ii-section-titles-4.png" />
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="code first last highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">Section</span> <span class="n">Title</span>
+<span class="o">***************</span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last figure">
+<img alt="Section title H5" src="_images/ii-section-titles-5.png" />
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="code first last highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">Section</span> <span class="n">Title</span>
+<span class="o">~~~~~~~~~~~~~~~</span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last figure">
+<img alt="Section title H6" src="_images/ii-section-titles-6.png" />
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="code first last highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">Section</span> <span class="n">Title</span>
+<span class="o">...............</span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last figure">
+<img alt="Section title H7" src="_images/ii-section-titles-7.png" />
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">When a title has both an underline and an overline, the title text may be inset, as in the first example above. This is merely aesthetic and not significant. Underline-only title text may not be inset.</p>
+</div>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">A blank line after a title is optional. All text blocks up to the next title of the same or higher level are included in a section (or subsection, etc.).</p>
+</div>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">All section title styles need not be used, nor must any specific section title style be used. However, a document must be consistent in its use of section titles: once a hierarchy of title styles is established, sections must use that hierarchy.</p>
+</div>
+</div>
+<div class="section" id="paragraphs-inline-markups">
+<h3>2.3.2. Paragraphs &amp; Inline markups<a class="headerlink" href="#paragraphs-inline-markups" title="Permalink to this headline">¶</a></h3>
+<p><strong>Paragraphs</strong> consist of blocks of left-aligned text with no markup indicating any other body element. Blank lines separate paragraphs from each other and from other body elements.</p>
+<p>Paragraphs may contain <strong>inline markups</strong>.</p>
+<p>The syntax for different types of <strong>inline markup</strong> is as follows:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Syntax</strong></td>
+<td><strong>Rendering</strong></td>
+</tr>
+<tr class="row-even"><td><div class="code first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span><span class="n">emphasis</span><span class="o">*</span>
+</pre></div>
+</div>
+</td>
+<td><em>emphasis</em></td>
+</tr>
+<tr class="row-odd"><td><div class="code first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">**</span><span class="n">strong</span> <span class="n">emphasis</span><span class="o">**</span>
+</pre></div>
+</div>
+</td>
+<td><strong>strong emphasis</strong></td>
+</tr>
+<tr class="row-even"><td><div class="code first last highlight-default notranslate"><div class="highlight"><pre><span></span>`interpreted text`
+</pre></div>
+</div>
+</td>
+<td><cite>interpreted text</cite></td>
+</tr>
+<tr class="row-odd"><td><div class="code first last highlight-default notranslate"><div class="highlight"><pre><span></span>``inline literals``
+</pre></div>
+</div>
+</td>
+<td><code class="docutils literal notranslate"><span class="pre">inline</span> <span class="pre">literals</span></code></td>
+</tr>
+<tr class="row-even"><td><div class="code first last highlight-default notranslate"><div class="highlight"><pre><span></span>Subscript text: H\ :sub:`2`\ O
+</pre></div>
+</div>
+</td>
+<td>Subscript text: H<sub>2</sub>O</td>
+</tr>
+<tr class="row-odd"><td><div class="code first last highlight-default notranslate"><div class="highlight"><pre><span></span>Superscript text: E = mc\ :sup:`2`
+</pre></div>
+</div>
+</td>
+<td>Superscript text: E = mc<sup>2</sup></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="lists">
+<h3>2.3.3. Lists<a class="headerlink" href="#lists" title="Permalink to this headline">¶</a></h3>
+<p>There are different types of lists:</p>
+<ul class="simple">
+<li><a class="reference internal" href="#bullet-lists">Bullet lists</a>;</li>
+<li><a class="reference internal" href="#enumerated-lists">Enumerated lists</a>;</li>
+<li><a class="reference internal" href="#definition-lists">Definition lists</a>.</li>
+</ul>
+<blockquote id="bullet-lists">
+<div><ol class="arabic simple">
+<li><strong>Bullet lists</strong></li>
+</ol>
+<p>A text block which begins with a ‘-‘, ‘*’, or ‘+’, followed by whitespace, is a bullet list item (a.k.a. ‘unordered’ list item). Below is shown an example of the syntax and the corresponding rendering of a bulet list:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Syntax</strong></td>
+<td><strong>Rendering</strong></td>
+</tr>
+<tr class="row-even"><td><div class="code first last highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="o">-</span> <span class="n">First</span> <span class="n">bullet</span> <span class="nb">list</span> <span class="n">item</span><span class="o">.</span>
+
+ <span class="o">-</span> <span class="n">First</span> <span class="n">paragraph</span> <span class="ow">in</span> <span class="n">the</span>
+   <span class="n">second</span> <span class="n">bullet</span> <span class="nb">list</span> <span class="n">item</span><span class="o">.</span>
+
+   <span class="n">Second</span> <span class="n">paragraph</span> <span class="ow">in</span> <span class="n">the</span>
+   <span class="n">second</span> <span class="n">bullet</span> <span class="nb">list</span> <span class="n">item</span><span class="o">.</span>
+
+   <span class="o">-</span> <span class="n">Sublist</span>
+
+ <span class="o">-</span> <span class="n">Third</span> <span class="n">item</span> <span class="n">of</span> <span class="n">the</span> <span class="n">main</span> <span class="nb">list</span>
+
+<span class="n">This</span> <span class="n">paragraph</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">part</span> <span class="n">of</span> <span class="n">the</span> <span class="nb">list</span><span class="o">.</span>
+</pre></div>
+</div>
+</td>
+<td><ul class="first">
+<li><p class="first">First bullet list item.</p>
+</li>
+<li><p class="first">First paragraph in the second bullet list item.</p>
+<p>Second paragraph in the second bullet list item.</p>
+<ul class="simple">
+<li>Sublist</li>
+</ul>
+</li>
+<li><p class="first">Third item of the main list</p>
+</li>
+</ul>
+<p class="last">This paragraph is not part of the list.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p><strong>The basic rules for creating a bulet list are as follows:</strong></p>
+<ul class="last simple">
+<li>The blank line above the first list item is required</li>
+<li>Blank lines between between the same level list items are optional.</li>
+<li>The blank line above the second paragraph in the list is required.</li>
+<li>A sublist is a new list so requires a blank line above and below.</li>
+<li>The blank line below the last item of the bullet list is required.</li>
+<li>Text blocks must be left-aligned, indented relative to the bullet.</li>
+<li>The left edge of the second paragrap in the list lines up with the paragraph above, both indented relative to the bullet.</li>
+<li>The bullet of a sublist lines up with the left edge of the text blocks above.</li>
+</ul>
+</div>
+<p>Here are examples of <strong>incorrectly</strong> formatted bullet lists:</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="n">This</span> <span class="n">first</span> <span class="n">line</span> <span class="ow">is</span> <span class="n">fine</span><span class="o">.</span>
+<span class="n">A</span> <span class="n">blank</span> <span class="n">line</span> <span class="ow">is</span> <span class="n">required</span> <span class="n">between</span> <span class="nb">list</span> <span class="n">items</span> <span class="ow">and</span> <span class="n">paragraphs</span><span class="o">.</span> <span class="p">(</span><span class="ne">Warning</span><span class="p">)</span>
+
+<span class="o">-</span> <span class="n">The</span> <span class="n">following</span> <span class="n">line</span> <span class="n">appears</span> <span class="n">to</span> <span class="n">be</span> <span class="n">a</span> <span class="n">new</span> <span class="n">sublist</span><span class="p">,</span> <span class="n">but</span> <span class="n">it</span> <span class="ow">is</span> <span class="ow">not</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">This</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">paragraph</span> <span class="n">contination</span><span class="p">,</span> <span class="ow">not</span> <span class="n">a</span> <span class="n">sublist</span> <span class="p">(</span><span class="n">no</span> <span class="n">blank</span> <span class="n">line</span><span class="p">)</span><span class="o">.</span>
+  <span class="o">-</span> <span class="n">Warnings</span> <span class="n">may</span> <span class="n">be</span> <span class="n">issued</span> <span class="n">by</span> <span class="n">the</span> <span class="n">implementation</span><span class="o">.</span>
+</pre></div>
+</div>
+</div></blockquote>
+<blockquote id="enumerated-lists">
+<div><ol class="arabic simple" start="2">
+<li><strong>Enumerated lists</strong></li>
+</ol>
+<p>Enumerated lists (a.k.a. ‘ordered’ lists) are similar to bullet lists, but use enumerators instead of bullets. An enumerator consists of an enumeration sequence member and formatting, followed by whitespace. The following enumeration sequences are recognized:</p>
+<ul class="simple">
+<li>arabic numerals: 1, 2, 3, … (no upper limit).</li>
+<li>uppercase alphabet characters: A, B, C, …, Z.</li>
+<li>lower-case alphabet characters: a, b, c, …, z.</li>
+<li>uppercase Roman numerals: I, II, III, IV, … (no upper limit).</li>
+<li>lowercase Roman numerals: i, ii, iii, iv, … (no upper limit).</li>
+</ul>
+<p>The following formatting types are recognized:</p>
+<ul class="simple">
+<li>suffixed with a period: ‘1.’, ‘A.’, ‘a.’, ‘I.’, ‘i.’.</li>
+<li>surrounded by parentheses: ‘(1)’, ‘(A)’, ‘(a)’, ‘(I)’, ‘(i)’.</li>
+<li>suffixed with a right-parenthesis: ‘1)’, ‘A)’, ‘a)’, ‘I)’, ‘i)’.</li>
+</ul>
+<p>Enumeration list examples:</p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Syntax</strong></td>
+<td><strong>Rendering</strong></td>
+</tr>
+<tr class="row-even"><td><div class="code first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">I</span><span class="o">.</span> <span class="n">Chapter</span>
+    <span class="mf">1.1</span><span class="o">.</span> <span class="n">Title</span>
+         <span class="mf">1.1</span><span class="o">.</span><span class="mf">1.</span> <span class="n">Subtitle</span>
+    <span class="mf">1.2</span><span class="o">.</span> <span class="n">Title</span>
+       <span class="n">A</span><span class="p">)</span> <span class="n">Case</span>
+       <span class="n">B</span><span class="p">)</span> <span class="n">Case</span>
+
+         <span class="n">a</span><span class="o">.</span> <span class="n">Subcase</span>
+         <span class="n">b</span><span class="o">.</span> <span class="n">Subcase</span>
+
+<span class="n">II</span><span class="o">.</span> <span class="n">Chapter</span>
+     <span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="n">Paragraph</span>
+     <span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="n">Paragraph</span>
+</pre></div>
+</div>
+</td>
+<td><ol class="first last upperroman">
+<li><dl class="first docutils">
+<dt>Chapter</dt>
+<dd><dl class="first last docutils">
+<dt>1.1. Title</dt>
+<dd><p class="first last">1.1.1. Subtitle</p>
+</dd>
+<dt>1.2. Title</dt>
+<dd><ol class="first upperalpha simple">
+<li>Case</li>
+<li>Case</li>
+</ol>
+<blockquote class="last">
+<div><ol class="loweralpha simple">
+<li>Subcase</li>
+<li>Subcase</li>
+</ol>
+</div></blockquote>
+</dd>
+</dl>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Chapter</dt>
+<dd><ol class="first last arabic simple">
+<li>Paragraph</li>
+<li>Paragraph</li>
+</ol>
+</dd>
+</dl>
+</li>
+</ol>
+</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p><strong>For an enumerated list to be recognized, the following must hold true:</strong></p>
+<ol class="last arabic simple">
+<li>The list must consist of multiple adjacent list items (2 or more).</li>
+<li>The enumerators must all have the same format and sequence type.</li>
+<li>The enumerators must be in sequence (i.e., ‘1.’, ‘3.’ is not allowed).</li>
+<li>Nested enumerated lists must be created with indentation.</li>
+</ol>
+</div>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">It is recommended that the enumerator of the first list item be ordinal-1 (‘1’, ‘A’, ‘a’, ‘I’, or ‘i’). Although other start-values will be recognized, they may not be supported by the output format.</p>
+</div>
+<p>The second line of each enumerated list item is checked for validity. This is to prevent ordinary paragraphs from being mistakenly interpreted as list items, when they happen to begin with text identical to enumerators.</p>
+<p>If a single-line paragraph begins with text identical to an enumerator (“A.”, “1.”, “(b)”, “I)”, etc.), the first character will have to be escaped in order to have the line parsed as an ordinary paragraph.</p>
+<ol class="arabic simple" id="definition-lists" start="3">
+<li><strong>Definition lists</strong></li>
+</ol>
+<p>Each definition list item contains a <strong>term</strong> and a <strong>definition</strong>. A <strong>term</strong> is a simple one-line paragraph. A <strong>definition</strong> is a block indented relative to the term, and may contain multiple paragraphs and other body elements. Blank lines are required before the term and after the definition, but there may be no blank line between a term and a definition:</p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Syntax</strong></td>
+<td><strong>Rendering</strong></td>
+</tr>
+<tr class="row-even"><td><div class="code first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Term</span> <span class="mi">1</span>
+     <span class="n">Definition</span> <span class="mf">1.</span>
+
+<span class="n">Term</span> <span class="mi">2</span>
+     <span class="n">Definition</span> <span class="mi">2</span><span class="p">,</span> <span class="n">paragraph</span> <span class="mf">1.</span>
+
+     <span class="n">Definition</span> <span class="mi">2</span><span class="p">,</span> <span class="n">paragraph</span> <span class="mf">2.</span>
+</pre></div>
+</div>
+</td>
+<td><dl class="first last docutils">
+<dt>Term 1</dt>
+<dd>Definition 1.</dd>
+<dt>Term 2</dt>
+<dd><p class="first">Definition 2, paragraph 1.</p>
+<p class="last">Definition 2, paragraph 2.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="blocks">
+<h3>2.3.4. Blocks<a class="headerlink" href="#blocks" title="Permalink to this headline">¶</a></h3>
+<p>Two types of blocks are discussed here:</p>
+<ul class="simple">
+<li><a class="reference internal" href="#literal-blocks">Literal blocks</a></li>
+<li><a class="reference internal" href="#block-quotes">Block quotes</a></li>
+</ul>
+<blockquote id="literal-blocks">
+<div><ol class="arabic simple">
+<li><strong>Literal blocks</strong></li>
+</ol>
+<p>Literal code blocks are introduced by ending a paragraph with the special marker ‘<strong>::</strong>’.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Syntax</strong></td>
+<td><strong>Rendering</strong></td>
+</tr>
+<tr class="row-even"><td><div class="code first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="ow">is</span> <span class="n">normal</span> <span class="n">paragraph</span><span class="o">.</span>
+<span class="n">Following</span> <span class="ow">is</span> <span class="n">literal</span> <span class="n">text</span>
+<span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span><span class="p">,</span> <span class="n">source</span> <span class="n">code</span><span class="p">)::</span>
+
+     <span class="k">if</span> <span class="n">literal_block</span><span class="p">:</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;is left as-is&#39;</span>
+        <span class="n">spaces_and_linebreaks</span> <span class="o">=</span> <span class="s1">&#39;are preserved&#39;</span>
+        <span class="n">markup_processing</span> <span class="o">=</span> <span class="kc">None</span>
+     <span class="c1"># a literal block continues until</span>
+     <span class="c1"># the indentation ends</span>
+
+<span class="n">This</span> <span class="ow">is</span> <span class="n">also</span> <span class="n">normal</span> <span class="n">paragraph</span> <span class="p">(</span><span class="ow">not</span> <span class="n">idented</span>
+<span class="n">text</span> <span class="n">separated</span> <span class="k">with</span> <span class="n">blank</span> <span class="n">line</span><span class="p">)</span><span class="o">.</span>
+</pre></div>
+</div>
+</td>
+<td><p class="first">This is normal paragraph.
+Following is literal text
+(e.g., source code):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">literal_block</span><span class="p">:</span>
+   <span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;is left as-is&#39;</span>
+   <span class="n">spaces_and_linebreaks</span> <span class="o">=</span> <span class="s1">&#39;are preserved&#39;</span>
+   <span class="n">markup_processing</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="c1"># a literal block continues until</span>
+<span class="c1"># the indentation ends</span>
+</pre></div>
+</div>
+<p class="last">This is also normal paragraph (not idented
+text separated with blank line).</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>When ‘<strong>::</strong>’ is immediately preceeded by whitespace, both colons will be removed from the output. When text immediately preceeds the ‘<strong>::</strong>’, <em>one</em> colon will be removed from the output, leaving only one (i.e., ‘<strong>::</strong>’ will be replaced by ‘<strong>:</strong>’). When ‘<strong>::</strong>’ is alone on a line, it will be completely removed from the output; no empty paragraph will remain.
+In other words, these are all equivalent:</p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Syntax</strong></td>
+<td><strong>Rendering</strong></td>
+</tr>
+<tr class="row-even"><td><ol class="first last arabic">
+<li><p class="first">Minimized:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Paragraph</span><span class="p">::</span>
+
+    <span class="n">Literal</span> <span class="n">block</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Partly expanded:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Paragraph</span><span class="p">:</span> <span class="p">::</span>
+
+    <span class="n">Literal</span> <span class="n">block</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Fully expanded:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Paragraph</span><span class="p">:</span>
+
+<span class="p">::</span>
+
+    <span class="n">Literal</span> <span class="n">block</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</td>
+<td><ol class="first last arabic">
+<li><p class="first">Minimized:</p>
+<blockquote>
+<div><p>Paragraph:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Literal</span> <span class="n">block</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Partly expanded:</p>
+<blockquote>
+<div><p>Paragraph:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Literal</span> <span class="n">block</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Fully expanded:</p>
+<blockquote>
+<div><p>Paragraph:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Literal</span> <span class="n">block</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</div></blockquote>
+<blockquote id="block-quotes">
+<div><ol class="arabic simple" start="2">
+<li><strong>Block quotes</strong></li>
+</ol>
+<p>A text block that is indented relative to the preceeding text, without markup indicating it to be a literal block, is a block quote. All markup processing (for body elements and inline markup) continues within the block quote. Blank lines are required before and after a block quote, but these blank lines are not included as part of the block quote.</p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><p class="first"><strong>Syntax</strong>:</p>
+<div class="last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="ow">is</span> <span class="n">an</span> <span class="n">ordinary</span> <span class="n">paragraph</span><span class="p">,</span> <span class="n">introducing</span> <span class="n">a</span> <span class="n">block</span> <span class="n">quote</span><span class="p">:</span>
+
+    <span class="s2">&quot;It is my business to know things. That is my trade.&quot;</span>
+
+      <span class="o">--</span><span class="n">Sherlock</span> <span class="n">Holmes</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p class="first"><strong>Rendering</strong>:</p>
+<p>This is an ordinary paragraph, introducing a block quote:</p>
+<blockquote class="last">
+<div><p>“It is my business to know things. That is my trade.”</p>
+<blockquote>
+<div>– Sherlock Holmes</div></blockquote>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="tables">
+<h3>2.3.5. Tables<a class="headerlink" href="#tables" title="Permalink to this headline">¶</a></h3>
+<p>The description of the tables depends on their complexity and could be done in two main ways:</p>
+<ul>
+<li><p class="first">by using special characters (‘<strong>-</strong>‘,’<strong>=</strong>’, ‘<strong>|</strong>’, and ‘<strong>+</strong>’) - suitable for <a class="reference internal" href="#simple-tables">simple tables</a> and not so and not so complicated <a class="reference internal" href="#grid-tables">grid tables</a>;</p>
+</li>
+<li><p class="first">by using directives (most common directive <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">list-table:</span></code>) - suitable for <a class="reference internal" href="#complex-tables">complex tables</a>.</p>
+</li>
+<li><p class="first"><strong>Table description by using special characters:</strong></p>
+<p>Tables are described with a visual outline made up of the characters ‘<strong>-</strong>‘, ‘<strong>=</strong>’, ‘<strong>|</strong>’, and ‘<strong>+</strong>’:</p>
+<ul class="simple">
+<li>The hyphen (‘<strong>-</strong>‘) is used for horizontal lines (row separators).</li>
+<li>The equals sign (‘<strong>=</strong>’) may be used to separate optional header rows from the table body.</li>
+<li>The vertical bar (‘<strong>|</strong>’) is used for vertical lines (column separators).</li>
+<li>The plus sign (‘<strong>+</strong>’) is used for intersections of horizontal and vertical lines.</li>
+</ul>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">Each cell contains zero or more body elements. As with other body elements, blank lines are required before and after tables. Tables’ left edges should align with the left edge of preceeding text blocks; otherwise, the table is considered to be part of a block quote.</p>
+</div>
+</li>
+</ul>
+<blockquote id="simple-tables">
+<div><ol class="arabic simple">
+<li><strong>Simple tables</strong></li>
+</ol>
+<p>Simple tables provide a compact and easy to type but limited row-oriented table representation for simple data sets. Cell contents are typically single paragraphs. Simple tables allow multi-line rows (in all but the first column) and column spans, but not row spans.</p>
+<p>Simple tables are described with horizontal borders made up of “<strong>=</strong>” and “<strong>-</strong>” characters:</p>
+<ul class="simple">
+<li>The equals sign (“<strong>=</strong>”) is used for top and bottom table borders, and to separate optional header rows from the table body.</li>
+<li>The hyphen (“<strong>-</strong>“) is used to indicate column spans in a single row by underlining the joined columns, and may optionally be used to explicitly and/or visually separate rows.</li>
+</ul>
+<p>A simple table begins with a top border of equals signs with one or more spaces at each column boundary (two or more spaces recommended). Regardless of spans, the top border must fully describe all table columns. There must be at least two columns in the table (to differentiate it from section headers). The top border may be followed by header rows, and the last of the optional header rows is underlined with ‘<strong>=</strong>’, again with spaces at column boundaries. There may not be a blank line below the header row separator; it would be interpreted as the bottom border of the table. The bottom boundary of the table consists of ‘<strong>=</strong>’ underlines, also with spaces at column boundaries. For example, here is a truth table, a three-column table with one header row and four body rows:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Syntax</strong>:</td>
+<td><strong>Rendering</strong>:</td>
+</tr>
+<tr class="row-even"><td><div class="code first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">=====</span>  <span class="o">=====</span>  <span class="o">=======</span>
+  <span class="n">A</span>      <span class="n">B</span>    <span class="n">A</span> <span class="ow">and</span> <span class="n">B</span>
+<span class="o">=====</span>  <span class="o">=====</span>  <span class="o">=======</span>
+<span class="kc">False</span>  <span class="kc">False</span>  <span class="kc">False</span>
+<span class="kc">True</span>   <span class="kc">False</span>  <span class="kc">False</span>
+<span class="kc">False</span>  <span class="kc">True</span>   <span class="kc">False</span>
+<span class="kc">True</span>   <span class="kc">True</span>   <span class="kc">True</span>
+<span class="o">=====</span>  <span class="o">=====</span>  <span class="o">=======</span>
+</pre></div>
+</div>
+</td>
+<td><table border="1" class="first last docutils">
+<colgroup>
+<col width="29%" />
+<col width="29%" />
+<col width="41%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">A</th>
+<th class="head">B</th>
+<th class="head">A and B</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>False</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="row-even"><td>False</td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Underlines of ‘<strong>-</strong>‘ may be used to indicate column spans by “filling in” column margins to join adjacent columns. Column span underlines must be complete (they must cover all columns) and align with established column boundaries. Text lines containing column span underlines may not contain any other text. A column span underline applies only to one row immediately above it. For example, here is a table with a column span in the header:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Syntax</strong>:</td>
+<td><strong>Rendering</strong>:</td>
+</tr>
+<tr class="row-even"><td><div class="code first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">=====</span>  <span class="o">=====</span>  <span class="o">======</span>
+   <span class="n">Inputs</span>     <span class="n">Output</span>
+<span class="o">------------</span>  <span class="o">------</span>
+  <span class="n">A</span>      <span class="n">B</span>    <span class="n">A</span> <span class="ow">or</span> <span class="n">B</span>
+<span class="o">=====</span>  <span class="o">=====</span>  <span class="o">======</span>
+<span class="kc">False</span>  <span class="kc">False</span>  <span class="kc">False</span>
+<span class="kc">True</span>   <span class="kc">False</span>  <span class="kc">True</span>
+<span class="kc">False</span>  <span class="kc">True</span>   <span class="kc">True</span>
+<span class="kc">True</span>   <span class="kc">True</span>   <span class="kc">True</span>
+<span class="o">=====</span>  <span class="o">=====</span>  <span class="o">======</span>
+</pre></div>
+</div>
+</td>
+<td><table border="1" class="first last docutils">
+<colgroup>
+<col width="31%" />
+<col width="31%" />
+<col width="38%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head" colspan="2">Inputs</th>
+<th class="head">Output</th>
+</tr>
+<tr class="row-even"><th class="head">A</th>
+<th class="head">B</th>
+<th class="head">A or B</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-odd"><td>False</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="row-even"><td>True</td>
+<td>False</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>False</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-even"><td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<blockquote id="grid-tables">
+<div><ol class="arabic simple" start="2">
+<li><strong>Grid tables</strong></li>
+</ol>
+<p>Grid tables provide a complete table representation via grid-like “ASCII art”. Grid tables allow arbitrary cell contents (body elements), and both row and column spans. However, grid tables can be cumbersome to produce, especially for simple data sets.</p>
+<p>Grid tables are described with a visual grid made up of the characters “<strong>-</strong>“, “<strong>=</strong>”, “<strong>|</strong>”, and “<strong>+</strong>”.</p>
+<ul class="simple">
+<li>The hyphen (“<strong>-</strong>“) is used for horizontal lines (row separators).</li>
+<li>The equals sign (“<strong>=</strong>”) may be used to separate optional header rows from the table body (not supported by the Emacs table mode).</li>
+<li>The vertical bar (“<strong>|</strong>”) is used for vertical lines (column separators).</li>
+<li>The plus sign (“<strong>+</strong>”) is used for intersections of horizontal and vertical lines.</li>
+</ul>
+<table border="1" class="docutils">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><p class="first"><strong>Syntax</strong>:</p>
+<div class="last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+------------------------+------------+----------+----------+</span>
+<span class="o">|</span> <span class="n">Header</span> <span class="n">row</span><span class="p">,</span> <span class="n">column</span> <span class="mi">1</span>   <span class="o">|</span> <span class="n">Header</span> <span class="mi">2</span>   <span class="o">|</span> <span class="n">Header</span> <span class="mi">3</span> <span class="o">|</span> <span class="n">Header</span> <span class="mi">4</span> <span class="o">|</span>
+<span class="o">|</span> <span class="p">(</span><span class="n">header</span> <span class="n">rows</span> <span class="n">optional</span><span class="p">)</span> <span class="o">|</span>            <span class="o">|</span>          <span class="o">|</span>          <span class="o">|</span>
+<span class="o">+========================+============+==========+==========+</span>
+<span class="o">|</span> <span class="n">body</span> <span class="n">row</span> <span class="mi">1</span><span class="p">,</span> <span class="n">column</span> <span class="mi">1</span>   <span class="o">|</span> <span class="n">column</span> <span class="mi">2</span>   <span class="o">|</span> <span class="n">column</span> <span class="mi">3</span> <span class="o">|</span> <span class="n">column</span> <span class="mi">4</span> <span class="o">|</span>
+<span class="o">+------------------------+------------+----------+----------+</span>
+<span class="o">|</span> <span class="n">body</span> <span class="n">row</span> <span class="mi">2</span>             <span class="o">|</span> <span class="n">Cells</span> <span class="n">may</span> <span class="n">span</span> <span class="n">columns</span><span class="o">.</span>          <span class="o">|</span>
+<span class="o">+------------------------+------------+---------------------+</span>
+<span class="o">|</span> <span class="n">body</span> <span class="n">row</span> <span class="mi">3</span>             <span class="o">|</span> <span class="n">Cells</span> <span class="n">may</span>  <span class="o">|</span> <span class="o">-</span> <span class="n">Table</span> <span class="n">cells</span>       <span class="o">|</span>
+<span class="o">+------------------------+</span> <span class="n">span</span> <span class="n">rows</span><span class="o">.</span> <span class="o">|</span> <span class="o">-</span> <span class="n">contain</span>           <span class="o">|</span>
+<span class="o">|</span> <span class="n">body</span> <span class="n">row</span> <span class="mi">4</span>             <span class="o">|</span>            <span class="o">|</span> <span class="o">-</span> <span class="n">body</span> <span class="n">elements</span><span class="o">.</span>    <span class="o">|</span>
+<span class="o">+------------------------+------------+---------------------+</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p class="first"><strong>Rendering</strong>:</p>
+<blockquote class="last">
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="43%" />
+<col width="21%" />
+<col width="18%" />
+<col width="18%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Header row, column 1
+(header rows optional)</th>
+<th class="head">Header 2</th>
+<th class="head">Header 3</th>
+<th class="head">Header 4</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>body row 1, column 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>column 4</td>
+</tr>
+<tr class="row-odd"><td>body row 2</td>
+<td colspan="3">Cells may span columns.</td>
+</tr>
+<tr class="row-even"><td>body row 3</td>
+<td rowspan="2">Cells may
+span rows.</td>
+<td colspan="2" rowspan="2"><ul class="first last simple">
+<li>Table cells</li>
+<li>contain</li>
+<li>body elements.</li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td>body row 4</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<ul class="simple">
+<li><strong>Table description by using directive:</strong></li>
+</ul>
+<blockquote id="complex-tables">
+<div><ol class="arabic simple" start="3">
+<li><strong>Complex tables</strong></li>
+</ol>
+<p>When the tables are very complex, i.е. they include long paragraphs containing various body elements, the use of special  characters is extremely difficult and inappropriate. In this case, it is more appropriate to use the <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">list-table::</span></code> directive.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">list-table::</span></code> directive is used to create a table from data in a uniform two-level bullet list. “Uniform” means that each sublist (second-level list) must contain the same number of list items.
+The following options are recognized:</p>
+<ul class="simple">
+<li><strong>:widths:</strong> <em>integer</em> or <em>auto</em> - a comma- or space-separated list of relative column widths. The default is equal-width columns (100%/#columns). The special value <em>auto</em> may be used by writers to decide whether to delegate the determination of column widths to the backend.</li>
+<li><strong>:width:</strong> <em>length or percentage of the current line width</em> - forces the width of the table to the specified length or percentage of the line width. If omitted, the renderer determines the width of the table based on its contents.</li>
+<li><strong>:header-rows:</strong> <em>integer</em> - the number of rows of list data to use in the table header. Defaults to 0.</li>
+<li><strong>:stub-columns:</strong> <em>integer</em> - the number of table columns to use as stubs (row titles, on the left). Defaults to 0.</li>
+<li><strong>:align:</strong> <em>left</em>, <em>center</em>, or <em>right</em> - the horizontal alignment of the table.</li>
+</ul>
+<p>Several different examples are shown below:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><p class="first"><strong>Syntax</strong>:</p>
+<div class="last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="nb">list</span><span class="o">-</span><span class="n">table</span><span class="p">::</span> <span class="n">Тable</span> <span class="k">with</span> <span class="mi">3</span> <span class="n">columns</span><span class="p">,</span> <span class="n">header</span><span class="o">-</span><span class="n">row</span> <span class="ow">and</span> <span class="n">stub</span><span class="o">-</span><span class="n">column</span> <span class="ow">and</span> <span class="n">right</span> <span class="n">alignment</span>
+     <span class="p">:</span><span class="n">widths</span><span class="p">:</span> <span class="mi">15</span> <span class="mi">10</span> <span class="mi">20</span>
+     <span class="p">:</span><span class="n">header</span><span class="o">-</span><span class="n">rows</span><span class="p">:</span> <span class="mi">1</span>
+     <span class="p">:</span><span class="n">stub</span><span class="o">-</span><span class="n">columns</span><span class="p">:</span> <span class="mi">1</span>
+     <span class="p">:</span><span class="n">align</span><span class="p">:</span> <span class="n">right</span>
+
+     <span class="o">*</span> <span class="o">-</span> <span class="n">Header</span> <span class="mi">1</span>
+       <span class="o">-</span> <span class="n">Header</span> <span class="mi">2</span>
+       <span class="o">-</span> <span class="n">Header</span> <span class="mi">3</span>
+     <span class="o">*</span> <span class="o">-</span> <span class="n">Stub</span> <span class="n">Row</span> <span class="mi">1</span>
+       <span class="o">-</span> <span class="n">Column</span> <span class="mi">2</span><span class="p">,</span> <span class="n">row</span> <span class="mi">2</span>
+       <span class="o">-</span> <span class="n">Column</span> <span class="mi">3</span><span class="p">,</span> <span class="n">row</span> <span class="mi">2</span>
+     <span class="o">*</span> <span class="o">-</span> <span class="n">Stub</span> <span class="n">Row</span> <span class="mi">2</span>
+       <span class="o">-</span> <span class="n">Column</span> <span class="mi">2</span><span class="p">,</span> <span class="n">row</span> <span class="mi">3</span>
+       <span class="o">-</span> <span class="n">Column</span> <span class="mi">3</span><span class="p">,</span> <span class="n">row</span> <span class="mi">3</span>
+     <span class="o">*</span> <span class="o">-</span> <span class="n">Stub</span> <span class="n">Row</span> <span class="mi">3</span>
+       <span class="o">-</span> <span class="n">Column</span> <span class="mi">2</span><span class="p">,</span> <span class="n">row</span> <span class="mi">4</span>
+       <span class="o">-</span> <span class="n">Column</span> <span class="mi">3</span><span class="p">,</span> <span class="n">row</span> <span class="mi">4</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p class="first"><strong>Rendering</strong>:</p>
+<table border="1" class="colwidths-given last docutils align-right" id="id1">
+<caption><span class="caption-text">Тable with 3 columns, header-row and stub-column and right alignment</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="33%" />
+<col width="22%" />
+<col width="44%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head stub">Header 1</th>
+<th class="head">Header 2</th>
+<th class="head">Header 3</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><th class="stub">Stub Row 1</th>
+<td>Column 2, row 2</td>
+<td>Column 3, row 2</td>
+</tr>
+<tr class="row-odd"><th class="stub">Stub Row 2</th>
+<td>Column 2, row 3</td>
+<td>Column 3, row 3</td>
+</tr>
+<tr class="row-even"><th class="stub">Stub Row 3</th>
+<td>Column 2, row 4</td>
+<td>Column 3, row 4</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><p class="first"><strong>Syntax</strong>:</p>
+<div class="last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="nb">list</span><span class="o">-</span><span class="n">table</span><span class="p">::</span> <span class="n">Тable</span> <span class="k">with</span> <span class="mi">2</span> <span class="n">columns</span><span class="p">,</span> <span class="n">widths</span> <span class="n">by</span> <span class="n">default</span> <span class="n">without</span> <span class="n">header</span><span class="o">-</span><span class="n">row</span> <span class="ow">and</span> <span class="n">stub</span><span class="o">-</span><span class="n">column</span><span class="p">,</span>
+            <span class="n">center</span> <span class="n">alignment</span>
+     <span class="p">:</span><span class="n">header</span><span class="o">-</span><span class="n">rows</span><span class="p">:</span> <span class="mi">0</span>
+     <span class="p">:</span><span class="n">stub</span><span class="o">-</span><span class="n">columns</span><span class="p">:</span> <span class="mi">0</span>
+     <span class="p">:</span><span class="n">align</span><span class="p">:</span> <span class="n">center</span>
+
+     <span class="o">*</span> <span class="o">-</span> <span class="n">Column</span> <span class="mi">1</span>
+       <span class="o">-</span> <span class="n">Column</span> <span class="mi">2</span>
+     <span class="o">*</span> <span class="o">-</span> <span class="n">Row</span> <span class="mi">2</span>
+       <span class="o">-</span> <span class="n">Row</span> <span class="mi">2</span>
+     <span class="o">*</span> <span class="o">-</span> <span class="n">Row</span> <span class="mi">3</span>
+       <span class="o">-</span> <span class="n">Row</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p class="first"><strong>Rendering</strong>:</p>
+<blockquote class="last">
+<div><table border="1" class="docutils align-center" id="id2">
+<caption><span class="caption-text">Тable with 2 columns, widths by default without header-row and stub-column, center alignment</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Column 1</td>
+<td>Column 2</td>
+</tr>
+<tr class="row-even"><td>Row 2</td>
+<td>Row 2</td>
+</tr>
+<tr class="row-odd"><td>Row 3</td>
+<td>Row 3</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><p class="first"><strong>Syntax</strong>:</p>
+<div class="last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="nb">list</span><span class="o">-</span><span class="n">table</span><span class="p">::</span> <span class="n">Very</span> <span class="nb">complex</span> <span class="n">table</span>
+     <span class="p">:</span><span class="n">header</span><span class="o">-</span><span class="n">rows</span><span class="p">:</span> <span class="mi">0</span>
+     <span class="p">:</span><span class="n">stub</span><span class="o">-</span><span class="n">columns</span><span class="p">:</span> <span class="mi">0</span>
+
+     <span class="o">*</span> <span class="o">-</span> <span class="o">*</span><span class="n">Column</span> <span class="mi">1</span><span class="o">*</span>
+       <span class="o">-</span> <span class="o">*</span><span class="n">Column</span> <span class="mi">2</span><span class="o">*</span>
+     <span class="o">*</span> <span class="o">-</span> <span class="n">Row</span> <span class="mi">2</span> <span class="k">with</span> <span class="nb">list</span><span class="p">:</span>
+
+          <span class="o">-</span> <span class="n">bullet</span> <span class="nb">list</span> <span class="o">-</span> <span class="n">item</span> <span class="mi">1</span>
+          <span class="o">-</span> <span class="n">bullet</span> <span class="nb">list</span> <span class="o">-</span> <span class="n">item</span> <span class="mi">2</span>
+
+       <span class="o">-</span> <span class="n">Code</span> <span class="n">example</span><span class="p">:</span>
+          <span class="o">..</span> <span class="n">code</span><span class="p">::</span>
+
+               <span class="o">&gt;&gt;&gt;</span> <span class="n">some</span> <span class="n">code</span> <span class="n">example</span>
+
+     <span class="o">*</span> <span class="o">-</span> <span class="n">This</span> <span class="n">column</span> <span class="n">contains</span> <span class="n">two</span> <span class="n">long</span> <span class="n">paragraphs</span><span class="o">.</span>
+
+         <span class="n">The</span> <span class="nb">next</span> <span class="n">column</span> <span class="n">on</span> <span class="n">the</span> <span class="mi">3</span><span class="n">rd</span> <span class="n">row</span> <span class="n">will</span> <span class="n">be</span> <span class="n">empty</span><span class="o">.</span>
+       <span class="o">-</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p class="first"><strong>Rendering</strong>:</p>
+<blockquote class="last">
+<div><table border="1" class="docutils" id="id3">
+<caption><span class="caption-text">Complex table</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><em>Column 1</em></td>
+<td><em>Column 2</em></td>
+</tr>
+<tr class="row-even"><td><p class="first">Row 2 with list:</p>
+<blockquote class="last">
+<div><ul class="simple">
+<li>bullet list - item 1</li>
+<li>bullet list - item 2</li>
+</ul>
+</div></blockquote>
+</td>
+<td><dl class="first last docutils">
+<dt>Code example:</dt>
+<dd><div class="code first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">some</span> <span class="n">code</span> <span class="n">example</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="row-odd"><td><p class="first">This column contains two long paragraphs.</p>
+<p class="last">The next column on the 3rd row will be empty.</p>
+</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Because there are some issues with rendering of long tables, some corrections have to be made to the Sphinx configuration file  <strong>conf.py</strong> as well as some <strong>theme overrides</strong>. For more information, please see the following chapters:</p>
+<ul class="last simple">
+<li><a class="reference internal" href="about-conf.html#conf-py"><span class="std std-ref">More about conf.py - tips &amp; tricks</span></a></li>
+<li><a class="reference internal" href="trouble.html#trouble"><span class="std std-ref">Troubleshooting</span></a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="images">
+<h3>2.3.6. Images<a class="headerlink" href="#images" title="Permalink to this headline">¶</a></h3>
+<p>There are two common image directives: <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">image::</span></code> and <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">figure::</span></code>.</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><strong>Image</strong></li>
+</ol>
+<p>An <strong>“image”</strong> is a <strong>simple picture</strong>. The URI for the image source file is specified in the directive argument. As with hyperlink targets, the image URI may begin on the same line as the explicit markup start and target name, or it may begin in an indented text block immediately following, with no intervening blank lines. If there are multiple lines in the link block, they are stripped of leading and trailing whitespace and joined together.</p>
+<p>An <strong>“image”</strong> is described with <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">image::</span></code> directive with the following options:</p>
+<ul class="simple">
+<li><strong>:alt:</strong> <em>text</em> - alternate text: a short description of the image, displayed by applications that cannot display images, or spoken by applications for visually impaired users.</li>
+<li><strong>:height:</strong> <em>length</em> - the desired height of the image. Used to reserve space or scale the image vertically. When the “scale” option is also specified, they are combined. For example, a height of 200px and a scale of 50 is equivalent to a height of 100px with no scale.</li>
+<li><strong>:width:</strong> <em>length or percentage of the current line width</em> - the width of the image. Used to reserve space or scale the image horizontally. As with “height” above, when the “scale” option is also specified, they are combined.</li>
+<li><strong>:scale:</strong> <em>integer percentage (the “%” symbol is optional)</em> - the uniform scaling factor of the image. The default is “100 %”, i.e. no scaling.</li>
+<li><strong>:align:</strong> <em>top</em>, <em>middle</em>, <em>bottom</em>, <em>left</em>, <em>center</em>, or <em>right</em> - the alignment of the image, equivalent to the HTML &lt;img&gt; tag’s deprecated “align” attribute or the corresponding “vertical-align” and “text-align” CSS properties. The values “top”, “middle”, and “bottom” control an image’s vertical alignment (relative to the text baseline); they are only useful for inline images (substitutions). The values “left”, “center”, and “right” control an image’s horizontal alignment, allowing the image to float and have the text flow around it. The specific behavior depends upon the browser or rendering software used.</li>
+<li><strong>:target:</strong> <em>text (URI or reference name)</em> - makes the image into a hyperlink reference (“clickable”). The option argument may be a URI (relative or absolute), or a reference name with underscore suffix (e.g. <code class="docutils literal notranslate"><span class="pre">`a</span> <span class="pre">name`_</span></code>).</li>
+</ul>
+<p>Here are some examples of how to work with images:</p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Syntax</strong>:</td>
+<td><strong>Rendering</strong>:</td>
+</tr>
+<tr class="row-even"><td><p class="first">Full scaled image:</p>
+<div class="code last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">image</span><span class="p">::</span> <span class="o">/</span><span class="n">images</span><span class="o">/</span><span class="n">ii</span><span class="o">-</span><span class="n">eniware</span><span class="o">-</span><span class="n">logo</span><span class="o">.</span><span class="n">png</span>
+    <span class="p">:</span><span class="n">alt</span><span class="p">:</span> <span class="n">EiWARE</span> <span class="n">logo</span>
+</pre></div>
+</div>
+</td>
+<td><img alt="EiWARE logo" class="first last" src="_images/ii-eniware-logo.png" />
+</td>
+</tr>
+<tr class="row-odd"><td><p class="first">50% scaled image with right alignment:</p>
+<div class="code last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">image</span><span class="p">::</span> <span class="o">/</span><span class="n">images</span><span class="o">/</span><span class="n">ii</span><span class="o">-</span><span class="n">eniware</span><span class="o">-</span><span class="n">logo</span><span class="o">.</span><span class="n">png</span>
+    <span class="p">:</span><span class="n">scale</span><span class="p">:</span> <span class="mi">50</span> <span class="o">%</span>
+    <span class="p">:</span><span class="n">alt</span><span class="p">:</span> <span class="n">EiWARE</span> <span class="n">logo</span>
+    <span class="p">:</span><span class="n">align</span><span class="p">:</span> <span class="n">right</span>
+</pre></div>
+</div>
+</td>
+<td><a class="first last reference internal image-reference" href="_images/ii-eniware-logo.png"><img alt="EiWARE logo" class="align-right" src="_images/ii-eniware-logo.png" style="width: 200.0px; height: 200.0px;" /></a>
+</td>
+</tr>
+<tr class="row-even"><td><p class="first">Changed in height and width image with center alignment:</p>
+<div class="code last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">image</span><span class="p">::</span> <span class="o">/</span><span class="n">images</span><span class="o">/</span><span class="n">ii</span><span class="o">-</span><span class="n">eniware</span><span class="o">-</span><span class="n">logo</span><span class="o">.</span><span class="n">png</span>
+    <span class="p">:</span><span class="n">height</span><span class="p">:</span> <span class="mi">100</span><span class="n">px</span>
+    <span class="p">:</span><span class="n">width</span><span class="p">:</span> <span class="mi">200</span> <span class="n">px</span>
+    <span class="p">:</span><span class="n">align</span><span class="p">:</span> <span class="n">center</span>
+</pre></div>
+</div>
+</td>
+<td><a class="first last reference internal image-reference" href="_images/ii-eniware-logo.png"><img alt="_images/ii-eniware-logo.png" class="align-center" src="_images/ii-eniware-logo.png" style="width: 200px; height: 100px;" /></a>
+</td>
+</tr>
+<tr class="row-odd"><td><p class="first">25% scaled “clickable” image with left alignment:</p>
+<div class="code last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">image</span><span class="p">::</span> <span class="o">/</span><span class="n">images</span><span class="o">/</span><span class="n">ii</span><span class="o">-</span><span class="n">eniware</span><span class="o">-</span><span class="n">logo</span><span class="o">.</span><span class="n">png</span>
+    <span class="p">:</span><span class="n">scale</span><span class="p">:</span> <span class="mi">25</span> <span class="o">%</span>
+    <span class="p">:</span><span class="n">alt</span><span class="p">:</span> <span class="n">EiWARE</span> <span class="n">logo</span>
+    <span class="p">:</span><span class="n">align</span><span class="p">:</span> <span class="n">left</span>
+</pre></div>
+</div>
+</td>
+<td><a class="first last reference external image-reference" href="http://eniware.org"><img alt="EiWARE logo" class="align-left" src="_images/ii-eniware-logo.png" style="width: 100.0px; height: 100.0px;" /></a>
+</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><strong>Figure</strong></li>
+</ol>
+<p>A <strong>“figure”</strong> consists of <strong>image data</strong> (including image options), an <strong>optional caption</strong> (a single paragraph), and an <strong>optional legend</strong> (arbitrary body elements). For page-based output media, figures might float to a different position if this helps the page layout.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">figure::</span></code> directive supports all of the options of the <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">image::</span></code> directive.</p>
+<p>Here is an examples of how to work with figure:</p>
+<blockquote>
+<div><table border="1" class="docutils" id="id4">
+<caption><span class="caption-text">25% scaled figure with caption and legend:</span><a class="headerlink" href="#id4" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Syntax</strong>:</td>
+<td><strong>Rendering</strong>:</td>
+</tr>
+<tr class="row-even"><td><div class="code first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">figure</span><span class="p">::</span> <span class="o">/</span><span class="n">images</span><span class="o">/</span><span class="n">ii</span><span class="o">-</span><span class="n">eniware</span><span class="o">-</span><span class="n">logo</span><span class="o">.</span><span class="n">png</span>
+    <span class="p">:</span><span class="n">scale</span><span class="p">:</span> <span class="mi">25</span> <span class="o">%</span>
+    <span class="p">:</span><span class="n">alt</span><span class="p">:</span> <span class="n">EiWARE</span> <span class="n">logo</span>
+    <span class="p">:</span><span class="n">align</span><span class="p">:</span> <span class="n">center</span>
+
+    <span class="n">This</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">caption</span> <span class="n">of</span> <span class="n">the</span> <span class="n">figure</span>
+    <span class="n">Legend</span><span class="p">:</span>
+
+    <span class="o">..</span> <span class="nb">list</span><span class="o">-</span><span class="n">table</span><span class="p">::</span>
+        <span class="p">:</span><span class="n">header</span><span class="o">-</span><span class="n">rows</span><span class="p">:</span> <span class="mi">0</span>
+        <span class="p">:</span><span class="n">stub</span><span class="o">-</span><span class="n">columns</span><span class="p">:</span> <span class="mi">0</span>
+        <span class="p">:</span><span class="n">align</span><span class="p">:</span> <span class="n">center</span>
+
+        <span class="o">*</span> <span class="o">-</span> <span class="o">**</span><span class="n">Parameter</span><span class="o">**</span>
+          <span class="o">-</span> <span class="o">**</span><span class="n">Option</span><span class="o">**</span>
+        <span class="o">*</span> <span class="o">-</span> <span class="n">Type</span>
+          <span class="o">-</span> <span class="n">Logo</span>
+        <span class="o">*</span> <span class="o">-</span> <span class="n">Colour</span>
+          <span class="o">-</span> <span class="n">rgb</span><span class="p">(</span><span class="mi">57</span><span class="p">,</span> <span class="mi">106</span><span class="p">,</span> <span class="mi">166</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last figure align-center" id="id5">
+<a class="reference internal image-reference" href="_images/ii-eniware-logo.png"><img alt="EiWARE logo" src="_images/ii-eniware-logo.png" style="width: 100.0px; height: 100.0px;" /></a>
+<p class="caption"><span class="caption-text">This is the caption of the figure.</span></p>
+<div class="legend">
+<p>Legend:</p>
+<table border="1" class="docutils align-center">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Parameter</strong></td>
+<td><strong>Option</strong></td>
+</tr>
+<tr class="row-even"><td>Type</td>
+<td>Logo</td>
+</tr>
+<tr class="row-odd"><td>Colour</td>
+<td>rgb(57, 106, 166)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="hyperlinks-references">
+<h3>2.3.7. Hyperlinks &amp; References<a class="headerlink" href="#hyperlinks-references" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ol class="arabic simple">
+<li><strong>Hyperlinks</strong></li>
+</ol>
+<p>Hyperlinks are indicated by a trailing underscore, ‘<strong>_</strong>’, except for standalone hyperlinks which are recognized independently.</p>
+<p>For standalone hyperlinksIt the following main syntax for inline web links can be used:</p>
+<blockquote>
+<div><table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Syntax</strong>:</td>
+<td><div class="code first last highlight-default notranslate"><div class="highlight"><pre><span></span>`Cloud Foundry &lt;https://www.cloudfoundry.org/&gt;`_
+ - Open Source Cloud Application Platform``
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><strong>Rendering</strong>:</td>
+<td><a class="reference external" href="https://www.cloudfoundry.org/">Cloud Foundry</a>
+- Open Source Cloud Application Platform</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">There must be a space between the link text and the opening <strong>&lt;</strong> for the URL.</p>
+</div>
+<p>If the link text should be the web address, you don’t need special markup at all, the parser finds links and mail addresses in ordinary text:</p>
+<blockquote>
+<div><table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Syntax</strong>:</td>
+<td><div class="code first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">More</span> <span class="n">information</span> <span class="n">about</span> <span class="n">Cloud</span> <span class="n">Foundry</span> <span class="n">could</span>
+<span class="n">be</span> <span class="n">found</span> <span class="n">here</span><span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">cloudfoundry</span><span class="o">.</span><span class="n">org</span><span class="o">/</span>
+
+<span class="n">Please</span> <span class="n">use</span> <span class="n">this</span> <span class="n">mail</span> <span class="k">for</span> <span class="n">contacts</span><span class="p">:</span> <span class="n">mail</span><span class="nd">@mail</span><span class="o">.</span><span class="n">com</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><strong>Rendering</strong>:</td>
+<td><p class="first">More information about Cloud Foundry could
+be found here: <a class="reference external" href="https://www.cloudfoundry.org/">https://www.cloudfoundry.org/</a></p>
+<p class="last">Please use this mail for contacts: <a class="reference external" href="mailto:mail&#37;&#52;&#48;mail&#46;com">mail<span>&#64;</span>mail<span>&#46;</span>com</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>A third option to create hyperlinks is separating the link and the target definition in the following way:</p>
+<blockquote>
+<div><table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Syntax</strong>:</td>
+<td><div class="code first last highlight-default notranslate"><div class="highlight"><pre><span></span>This is a paragraph that contains `a link`_ .
+
+.. _a link: https://readthedocs.org
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><strong>Rendering</strong>:</td>
+<td>This is a paragraph that contains <a class="reference external" href="https://readthedocs.org">a link</a> .</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="footnotes-citations">
+<h3>2.3.8. Footnotes &amp; Citations<a class="headerlink" href="#footnotes-citations" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="admonitions">
+<h3>2.3.9. Admonitions<a class="headerlink" href="#admonitions" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="additional-body-elements">
+<h3>2.3.10. Additional body elements<a class="headerlink" href="#additional-body-elements" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Title: title</li>
+<li>Subtitle: subtitle</li>
+<li>Author/Authors: author</li>
+<li>Organization: organization</li>
+<li>Contact: contact</li>
+<li>Version: version</li>
+<li>Status: status</li>
+<li>Date: date</li>
+<li>Copyright: copyright</li>
+</ul>
+<p>This field-name-to-element mapping can be extended, or replaced for other
+languages. See the implementation documentation for details.</p>
+<p>A comment block is a text block:</p>
+<ul class="simple">
+<li>whose first line begins with ‘.. ‘ (the ‘comment start’),</li>
+<li>whose second and subsequent lines are indented relative to the first, and</li>
+<li>which ends with an unindented line.</li>
+</ul>
+<p>Comments are analogous to bullet lists, with ‘..’ as the bullet. Blank
+lines are required between comment blocks and other elements, but are
+optional between comment blocks where unambiguous.</p>
+<p>The comment block syntax is used for comments, directives, footnotes, and
+hyperlink targets.</p>
+</div>
+</div>
 </div>
 
 
@@ -164,10 +1464,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="basic-scenario.html" class="btn btn-neutral float-right" title="Basic Scenario" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="basic-scenario.html" class="btn btn-neutral float-right" title="3. Basic Scenario" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="intro.html" class="btn btn-neutral" title="Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="intro.html" class="btn btn-neutral" title="1. Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -209,6 +1509,7 @@
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 
